@@ -6,7 +6,7 @@ Such as niconico or bilibili's player, can bullet the commit on the screen with 
 
 取个中二点的名字。其实是个使用 QML 实现的弹幕播放器。
 
-## 弹幕文件的抽象
+## 弹幕的抽象
 
 弹幕文件最为基本信息是：
 
@@ -22,7 +22,7 @@ Such as niconico or bilibili's player, can bullet the commit on the screen with 
 
 6. 弹幕类型（诸如高级弹幕，滚动弹幕，悬停弹幕，逆滚弹幕）
 
-由于Qt 媒体类实现的问题，播放进度的 `position` 只能以一秒为间隔进行更新。
+由于 `Qt` 媒体类实现的问题，播放进度的 `position` 只能以一秒为间隔进行更新。
 
 ## 改进的 `VideoView`
 
@@ -62,6 +62,15 @@ Such as niconico or bilibili's player, can bullet the commit on the screen with 
 ```
 
 这样就可以输出时间间隔精度可以调控的 `postition`。
+
+另一个是使用约等于来处理低精度定时器时间匹配的问题。
+
+```js
+function approximate(a, b, d) {
+    d = d || 0.005;
+    return Math.abs(a-b) < d;
+}
+``` 
 
 ## 弹幕层的简单实现
 
@@ -124,3 +133,7 @@ Item {
 ## 弹幕播放器的整合
 
 TODO
+
+---
+
+[弹幕播放器中的时间轴算法](http://blog.sina.com.cn/s/blog_630555440100ueju.html)
