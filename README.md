@@ -2,7 +2,7 @@
 
 Dark Flame Master.
 
-Such as niconico or bilibili's player, can bullet the commit on the screen with playing video.
+Such as niconico or bilibili's player, can bullet the commit on the screen when playing video.
 
 取个中二点的名字。其实是个使用 QML 实现的弹幕播放器。
 
